@@ -19,6 +19,5 @@ void create_ppm_file(const char* pathname, int width, int height)
 
 int main()
 {
-  create_ppm_file(std::string("img.ppm").c_str(), 4, 4);
-  
+  create_ppm_file(std::string("img.ppm").c_str(), 25, 25);
 }

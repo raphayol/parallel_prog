@@ -2,12 +2,16 @@ CXX= g++
 CXXCLANG= clang++33
 CFLAGS= -Wextra -Werror -Wall -pedantic -g3
 DIRTEST= check/
-SRC= src/image.cc \
-		 src/main.cc
+SRC= src/image.cc     \
+     src/itr_sorter.cc\
+     src/para_sorter.cc\
+     src/main.cc
+
 OBJ=$(SRC:.cc=.o)
 BIN= out
 
 SGENSRC= generator/main.cc 
+
 OBJGEN=$(SGENSRC:.cc=.o)
 BINGEN=gen
 

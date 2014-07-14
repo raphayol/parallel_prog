@@ -86,6 +86,23 @@ void Image::to_ppm(const char* path)
     if (i % (width_ * 3) == 0)
       of << std::endl;
   }
-
 }
+
+int Image::get_width()
+{
+  return width_;
+}
+
+int Image::get_height()
+{
+  return height_;
+}
+
+int Image::get_int_value(int i)
+{
+  if (pixel_[i] < 0)
+    return (255 + pixel_[i]);
+  return pixel_[i];
+}
+
 
