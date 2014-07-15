@@ -1,9 +1,9 @@
 CXX= g++
 CXXCLANG= clang++33
-CFLAGS= -Wextra -Werror -Wall -pedantic -g3
+CFLAGS= -Wextra -Werror -Wall -L/usr/lib/ -ltbb 
 DIRTEST= check/
-SRC= src/image.cc     \
-     src/itr_sorter.cc\
+SRC= src/image.cc      \
+     src/itr_sorter.cc \
      src/para_sorter.cc\
      src/main.cc
 
@@ -22,8 +22,12 @@ $(BIN): $(OBJ)
 
 generate: 
 	$(CXX) $(CFLAGS) -o $(BINGEN) $(SGENSRC)
-	./$(BINGEN)
+	./$(BINGEN) 20 20
 	imview img.ppm
+
+check: generate
+	imview final.ppm
+
 
 clean:
 	@rm -f ${DIRTEST}${BIN} ${BIN} ${BIN}.core ${OBJ} ${BINGEN}

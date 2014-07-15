@@ -17,7 +17,15 @@ void create_ppm_file(const char* pathname, int width, int height)
 }
 
 
-int main()
+int main(int argc, char* argv[])
 {
-  create_ppm_file(std::string("img.ppm").c_str(), 25, 25);
+  int w = 20;
+  int h = 20;
+
+  if (argc > 2)
+  {
+    w = atoi(argv[1]);
+    h = atoi(argv[2]);
+  }
+  create_ppm_file(std::string("img.ppm").c_str(), w, h);
 }
